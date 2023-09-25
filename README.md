@@ -1,8 +1,8 @@
 # Descrição
 
-Neste exercício, você vai criar uma função que recebe informações sobre um Pokémon e retorna um objeto que o representa.
+Neste exercício, você vai criar uma função que calcula o total de milhas de um cliente dado umas lista de voos.
 
-Objetivo desse exercício é praticar a criação de funções e objetos em JavaScript. 
+Objetivo desse exercício é praticar a manipulação de vetores de objetos em JavaScript. 
 
 **Todas as alterações devem ser feitas nos arquivos já existentes**
 
@@ -10,29 +10,51 @@ Objetivo desse exercício é praticar a criação de funções e objetos em Java
 
 ## Instruções:
 
-1. Crie uma função chamada `criarPokemon` que aceita quatro argumentos: 
-  - nome (string), tipo (string), nivel (number) e hp (number).
-2. Dentro da função, crie um objeto vazio chamado pokemon.
-3. Adicione as seguintes propriedades ao objeto pokemon com base nos argumentos recebidos:
-  - `nome`: Nome do Pokémon (string).
-  - `tipo`: Tipo do Pokémon (string).
-  - `nivel`: Nível do Pokémon (number).
-  - `hp`: Pontos de vida do Pokémon (number).
-4. Retorne o objeto pokemon preenchido.
-5. Fora da função, chame `criarPokemon()` passando valores fictícios como argumentos e armazene o objeto resultante.
-6. Exiba o objeto resultante no console.
+Uma empresa de aviação tem um programa de fidelidade que premia seus clientes com milhas por cada voo que eles realizam. O cálculo de milhas é baseado na distância dos voos, e apenas voos de empresas parceiras são aceitos. 
 
+Os voos nacionais rendem 1 milha para cada quilometro percorrida, enquanto os voos internacionais rendem o dobro de milhas para a mesma distância percorrida.
 
-Exemplo de criação da função e chamada:
+Escreva um programa que calcule o total de milhas ganhos por um cliente com base em uma lista de voos. Para isso siga as seguintes instruções:
 
-```javascript
-function criarPokemon(nome, tipo, nivel, hp) {
-  ...
-}
+1. Cria uma função chamada `calcularTotalDeMilhas` que deve receber um vetor contendo a lista de voos.
+  - Cada voo possui os seguintes atributos
+    - origem
+    - destino
+    - distância.
+    - tipo (nacional ou internacional)
+    - operadora
+   - Veja o exemplo abaixo:
 
-const meuPokemon = criarPokemon("Pikachu", "Elétrico", 25, 80);
-console.log(meuPokemon);
+| Origem | Destino | Distância | Tipo | Operadora
+|---|---|---|---|---|
+| Rio de Janeiro | São Paulo| 400 | Nacional | AeroLink |
+| São Paulo | Miami | 8000 | Internacional | SkyWings |
+| São Paulo | Paris | 10000 | Internacional | Oceanic Airways |
+| Belo Horizonte | Rio de Janeiro | 300 | Nacional | AeroLink |
+| Miami | Nova York | 1200 | Nacional | JetStream |
+| São Paulo | Belo Horizonte | 500 | Nacional | StarFly |
+| Porto Alegre | Rio de janeiro | 800 | Nacional | AeroLink |
+| Rio de Janeiro | Fortaleza | 2800 | Nacional | StarFly |
+| Fortaleza | Lisboa | 6500 | Internacional | Oceanic Airways |
+| Belo Horizonte | Salvador | 900 | Nacional | StarFly |
+| Paris | Londres | 300 | Internacional | AeroLink |
+| Londres | Nova York | 3500 | Internacional | Pacific Air |
+| São Paulo | Lisboa | 7000 | Internacional | SkyWings |
+| Belo Horizonte | São Paulo | 500 | Nacional | AeroLink |
+| Rio de Janeiro | Recife | 2600 | Nacional | Oceanic Airways |
+| Recife | Madri | 5900 | Internacional | SkyWings |
+| São Paulo | Rio de Janeiro | 400 | Nacional | StarFly |
+| Rio de Janeiro | Brasília | 400 | Nacional | StarFly |
+| Brasília | Nova York | 5500 | Internacional | StarFly |
+| São Paulo | Brasília | 900 | Nacional | SkyWings |
+
+2. A função deve retornar um objeto com as seguintes informações:
+```js
+  {
+    nacionais: // Número de voos nacionais VALIDOS e realizados
+    internacionais: // Número de voos internacionais VALIDOS e realizados
+    invalidos: // Número de voos realizados por empresas não parceiras
+    milhasAcumuladas: //Total de milhas acumuladas
+  }
 ```
-Dica: 
-
-- Use os argumentos passados para a função para preencher as propriedades do Pokémon.
+3. Considere que as operadoreas **JetStream** e **Pacific Air** <mark>NÃO</mark> são parceiras do programa de fidelidade.
