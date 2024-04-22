@@ -54,7 +54,7 @@ Escreva um programa que calcule o total de milhas ganhos por um cliente com base
     nacionais: // Número de voos nacionais VALIDOS e realizados
     internacionais: // Número de voos internacionais VALIDOS e realizados
     invalidos: // Número de voos realizados por empresas não parceiras
-    milhasAcumuladas: //Total de milhas acumuladas
+    milhas: //Total de milhas acumuladas
   }
 ```
 3. Considere que as operadoreas **JetStream** e **Pacific Air** <mark>NÃO</mark> são parceiras do programa de fidelidade.
